@@ -4,6 +4,7 @@ context('DESAFIO QA AUTOMATION ENGONEER - PARTE 1', () => {
 
     let idUsuario
     let token
+    let livrosSelecionados
 
     const nomeDeUsuario = "Gab" + Math.floor(Math.random() * 10000)
     const senha = "Password123!"
@@ -61,6 +62,16 @@ context('DESAFIO QA AUTOMATION ENGONEER - PARTE 1', () => {
     });
 
     //Listar os livros disponíveis
+    it('Listar livros', () => {
+        cy.request({
+            method: "GET",
+            url: "https://demoqa.com/BookStore/v1/Books"
+        }).then((res) => {
+            expect(res.status).to.eq(200)
+            livrosSelecionados = res.body.books.slice(0, 2).map(b => b.isbn)
+            cy.log("Livros escolhidos: " + livrosSelecionados)
+        })
+    });
 
     //Alugar dois livros de livre escolha
 
