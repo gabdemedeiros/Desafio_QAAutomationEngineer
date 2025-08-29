@@ -12,15 +12,17 @@ Modo interativo: `npx cypress open`
 
 ### Caso de Teste Implementados
 - Parte 1 (arquivo: Desafio_Parte1.cy.js)
-  - Criar um usuário
-  - Gerar um token de acesso
-  - Confirmar se o usuário criado está autorizado
-  - Listar os livros disponíveis
+  - Etapas:
+    - Criar um usuário
+    - Gerar um token de acesso
+    - Confirmar se o usuário criado está autorizado
+    - Listar os livros disponíveis
  
     
-    Dificuldades encontradas:
- 
-    Não consegui desenvolver as etapas de alugar dois livros de livre escolha porque, ao clicar no título dos livros disponíveis, era redirecionada para uma tela branca, Como é possível observar no gif abaixo
+  - Dificuldades encontradas:
+    - Passo executado: Clicar no título dos livros disponíveis.
+    - Comportamento observado: Redireciona para uma tela em branco.
+    - Comportamento esperado: Exibir detalhes do livro.
     
     <p align="center">
       <img  src="cypress/fixtures/images/parte_1.gif">
