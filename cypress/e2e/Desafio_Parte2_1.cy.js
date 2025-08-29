@@ -1,6 +1,7 @@
 /// <reference types="cypress" /> 
 
 import { faker } from '@faker-js/faker'
+import 'cypress-file-upload'
 
 context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
 
@@ -9,6 +10,7 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
     const lastName = faker.person.lastName()
     const email = faker.internet.email()
     const phone = faker.string.numeric(10)
+    const fileName = "arquivo.txt"   // arquivo está na pasta cypress/fixtures
     it('Preenche e envia o formulário de sucesso', () => {
 
         // Ignora erros de scripts externos
@@ -38,9 +40,10 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
         cy.get(".react-datepicker__day--020").click() //Dia
 
         cy.get("#subjectsInput").type("Math{enter}") //Matérias
-        cy.get('label[for="id="hobbies-checkbox-3"]').click() //Hobbies
-
+        cy.get('label[for="hobbies-checkbox-3"]').click() //Hobbies
+        
         //Upload de Arquivo
+        cy.get("#uploadPicture").attachFile(fileName)
 
         //Submeter formulário
 
