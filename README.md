@@ -25,5 +25,5 @@ Modo interativo: `npx cypress open`
     - Comportamento esperado: Exibir detalhes do livro.
     
     <p align="center">
-      <img  src="cypress/fixtures/images/parte_1.gif">
+      <img  src="cypress/fixtures/images/parte1.gif">
     </p>
