@@ -2,7 +2,7 @@
 
 context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.2', () => {
 
-    it('', () => {
+    it('Teste de Browser', () => {
 
         // Ignora erros de scripts externos
         Cypress.on('uncaught:exception', (err, runnable) => {
