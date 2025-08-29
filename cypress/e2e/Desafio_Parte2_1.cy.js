@@ -10,6 +10,11 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
     const email = faker.internet.email()
     const phone = faker.string.numeric(10)
     it('Preenche e envia o formulário de sucesso', () => {
+
+        // Ignora erros de scripts externos
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
         
         //Acessar o site principal
         cy.visit("https://demoqa.com/")
@@ -26,6 +31,14 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
         cy.get("#userEmail").type(email) //E-mail
         cy.get('label[for="gender-radio-2"]').click() //Gênero
         cy.get("#userNumber").type(phone) //Telefone
+                                            
+        cy.get("#dateOfBirthInput").click()//Data de aniversário
+        cy.get(".react-datepicker__month-select").select("May") //Mês
+        cy.get(".react-datepicker__year-select").select("1995") //Ano
+        cy.get(".react-datepicker__day--020").click() //Dia
+
+        cy.get("#subjectsInput").type("Math{enter}") //Matérias
+        cy.get('label[for="id="hobbies-checkbox-3"]').click() //Hobbies
 
         //Upload de Arquivo
 
