@@ -40,11 +40,13 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.3', () => {
         cy.get("#department").type("Automação") //Departamento
 
         //Enviar formulário
-
         cy.get("#submit").click()
 
-
         //Editar o novo registro criado
+        cy.wait(5000) //Espera 5 segundos
+        cy.get("#edit-record-4").click() //Clica na canetinha
+        cy.get("#firstName").type(firstName) //Edita primeiro nome
+        cy.get("#submit").click() //Salva formulário novamente
 
         //Deletar o novo registro criado.
 
