@@ -11,6 +11,7 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
     const email = faker.internet.email()
     const phone = faker.string.numeric(10)
     const fileName = "arquivo.txt"   // arquivo está na pasta cypress/fixtures
+    const address = faker.location.streetAddress()
     it('Preenche e envia o formulário de sucesso', () => {
 
         // Ignora erros de scripts externos
@@ -42,15 +43,23 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.1', () => {
         cy.get("#subjectsInput").type("Math{enter}") //Matérias
         cy.get('label[for="hobbies-checkbox-3"]').click() //Hobbies
         
-        //Upload de Arquivo
+        //Upload de arquivo
         cy.get("#uploadPicture").attachFile(fileName)
 
+        //Endereço
+        cy.get("#currentAddress").type(address)
+        cy.get("#state").click().get("#react-select-3-option-1").click() //Estado
+        cy.get("#city").click().get("#react-select-4-option-2").click() // Cidade
+
         //Submeter formulário
+        cy.get("#submit").click()
 
         //Garantir pop-up
+        cy.get(".modal-content").should("be.visible")
+        cy.get(".modal-title").should("contain.text", "Thanks for submitting the form")
 
         //Fechar pop-up
-
+        cy.get("#closeLargeModal").click({force: true})
 
     });
 });
