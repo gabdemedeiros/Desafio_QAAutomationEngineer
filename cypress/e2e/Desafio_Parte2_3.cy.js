@@ -10,7 +10,6 @@ context('DESAFIO QA AUTOMATION ENGINEER - PARTE 2.3', () => {
     const email = faker.internet.email()
     const age = faker.string.numeric(2)
     const salary = faker.string.numeric(5)
-    const department = "Tecnologia"
 
     it('Teste de tabela', () => {
 
