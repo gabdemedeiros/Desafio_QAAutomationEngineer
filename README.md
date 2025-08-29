@@ -19,6 +19,9 @@ Modo interativo: `npx cypress open`
  
     
     Dificuldades encontradas:
+ 
+    Não consegui desenvolver as etapas de alugar dois livros de livre escolha porque, ao clicar no título dos livros disponíveis, era redirecionada para uma tela branca, Como é possível observar no gif abaixo
+    
     <p align="center">
-      <img height="500em" src="QAAtomationEngineer\cypress\fixtures\parte1.gif">
+      <img  src="cypress/fixtures/images/parte1.gif.gif">
     </p>
